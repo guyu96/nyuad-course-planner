@@ -18,25 +18,27 @@
       <form action="" class="filter">
         <select name="course-type" id="course-type">
           <option value="none"></option>
+          <option value="cs">Computer Science</option>
+          <option value="core">Core</option>
         </select>
         <select name="course-semester" id="course-semester">
-          <option value="-1"></option>
-          <option value="0">Fall</option>
-          <option value="1">J-term</option>
-          <option value="2">Spring</option>
-          <option value="3">Summer</option>
+          <option value="none"></option>
+          <option value="fall">Fall</option>
+          <option value="spring">Spring</option>
+          <option value="jterm">J-term</option>
+          <option value="summer">Summer</option>
         </select>
         <input type="text" id="course-name" placeholder="Course Name">
         <button type="submit">Search</button>
       </form>
       <ul ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-        <div class="course" id='1' draggable="true" ondragstart="dragstart_handler(event);" ondragleave="dragleave_handler(event);">
+        <div class="course" id='c1' draggable="true" ondragstart="dragstart_handler(event);" >
           <li>
             <span class="course-id">CS-106</span>
             <span class="course-title">CSO</span>
           </li>
         </div>
-        <div class="course" id='2' draggable="true" ondragstart="dragstart_handler(event);" >
+        <div class="course" id='c2' draggable="true" ondragstart="dragstart_handler(event);" >
           <li>
             <span class="course-id">CS-106</span>
             <span class="course-title">CSO</span>
