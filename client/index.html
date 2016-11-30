@@ -5,17 +5,21 @@
   <title>NYUAD Course Planner</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/341779c185.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body >
-
+<header>
+  <h1>Acamaniac</h1>
+</header>
 
 <main>
   <div class="pure-g">
     <div class="course-list pure-u-5-12">
-      <form action="" class="filter">
+      <form action="" class="pure-form">
         <select name="course-type" id="course-type">
           <option value="none"></option>
         </select>
@@ -27,9 +31,9 @@
           <option value="3">Summer</option>
         </select>
         <input type="text" id="course-name" placeholder="Course Name">
-        <button type="submit">Search</button>
+        <button type="submit" class="pure-button pure-button-primary">Search</button>
       </form>
-      <ul ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+      <ul class="course-box" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
         <div class="course" id='c1' draggable="true" ondragstart="dragstart_handler(event);" >
           <li>
             <span class="course-id">CS-106</span>
@@ -46,13 +50,11 @@
     </div>
 
     <div class="pure-u-14-24">
-      <header>
         <div class="year_switch">
-          <button id="previous" type="button" onclick="previous_year()">Previous icon</button>
+          <button id="previous" type="button" onclick="previous_year()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
             <span id="current_year"></span>
-          <button id="next" type="button" onclick="next_year()">Next icon</button>
+          <button id="next" type="button" onclick="next_year()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
-      </header>
 
       <div class="planner" id="0">
         <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">

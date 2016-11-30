@@ -1,3 +1,13 @@
+body{
+  margin: 1em;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+h1{
+  text-align: center;
+}
+
 main {
   clear: both;
 }
@@ -12,8 +22,9 @@ main {
 
 .planner {
   width: 100%;
-  border: solid;
+  border: 1px solid black;
   text-align: center;
+  margin-top: 5em;
 }
 
 .planner div{
@@ -26,23 +37,31 @@ footer {
 }
 
 .year_switch{
-   display: inline-block;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    width: 40%;
+    text-align: center;
 }
 
 button{
    display: inline-block;
+   background: transparent;
+   border: none;
 }
 
-#source {
-    color: blue;
-    border: 1px solid black;
-}
-
-#target {
-    border: 1px solid black;
-}
-
-ul{
+ul.course-box{
+  margin-right: 1em;
+  width: 90%;
+  height: 20em;
   border: 1px solid black;
-  min-height: 5em;
+  min-height: 1em;
+  overflow: scroll;
+}
+
+#course-type, #course-name{
+  width: 35%;
+}
+#course-semester{
+  width: 25%;
 }
