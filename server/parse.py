@@ -8,7 +8,6 @@ category_xml = request.urlopen(category_url).read()
 
 # print(category_xml)
 
-
 def get_category_by_id():
   pass
 
@@ -17,6 +16,11 @@ def parse_course():
 
 
 class Course:
-  def __init__(self, ):
-    self.id = 
-    self.title =
+  def __init__(self, ID, title, description, semester, prereq):
+    self.ID = ID # the course ID
+    self.title = title # the course title
+    self.description = description # the course description
+    self.semester = semester # an int -> 1 fall, 2 spring, 3 fall & spring
+    self.prereq = prereq # a list of other courses
+
+
