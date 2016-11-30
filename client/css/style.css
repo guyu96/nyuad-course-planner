@@ -24,7 +24,7 @@ main {
   width: 100%;
   border: 1px solid black;
   text-align: center;
-  margin-top: 5em;
+  margin-top: 52px;
 }
 
 .planner div{
@@ -59,9 +59,6 @@ button{
   overflow: scroll;
 }
 
-#course-type, #course-name{
-  width: 35%;
-}
-#course-semester{
-  width: 25%;
+#course-type, #course-name, #course-semester{
+  width: 27%;
 }
