@@ -1,65 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <title>NYUAD Course Planner</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="css/style.css">
 
-		<title>Course Planner</title>
+</head>
+<body>
 
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<header>
+  <!-- Choose major/core -->
+  <div class="options">
+    <select name="major">
+      <option value="cs">Computer Science</option> 
+    </select>
+    <select name="core">
+      <option value="new">New Core</option>
+      <option value="old">Old Core</option> 
+    </select>
+  </div>
+  <!-- How close to fulfilling graduation requirement -->
+  <div class="status">
+    <div id="core">
+      <h3>Core Requirement</h3>
+      <progress value="10" max="100">Core</progress>
+    </div>
+    <div id="major">
+      <h3>Major Requirement</h3>
+      <progress value="20" max="100">Major</progress>
+    </div>
+    <div id="islam">
+      <h3>Islamic Requirement</h3>
+    </div>
+    <div id="pe">
+      <h3>PE Requirement</h3>
+    </div>
+  </div>
+</header>
 
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
-
-	</head>
-  <body>
-    <div id="top-bar" class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div id="user_input" class="form-group">
-            <label for="major">Your major</label>
-            <select id="major" placeholder="Major" onchange="majorHandler()">
-              <option value='cs'>Computer Sciece</option>
-              <option value='va'>Visual Arts</option>
-            </select>
-            <label for="core">Your core curriculum</label>
-            <select id="core" placeholder="Core" onchange="coreHandler()">
-              <option value='new'>New Core</option>
-              <option value='old'>Old Core</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-sm-5">
-          <div id="second-box">
-            <p>Core Requirement Progress</p>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                70%
-              </div>
-            </div>
-            <p>Major Requirement Progress</p>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                70%
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div id="second-box">
-            <label for="islamicReq" class="pure-checkbox">
-            <input id="islamicReq" type="checkbox" value="" disabled>
-            Islamic Requirement
-          </label>
-          </div>
-        </div>
+<main>
+  <div class="course-list">
+    <form action="" class="filter">
+      <select name="course-type" id="course-type">
+        <option value="none"></option>
+        <option value="cs">Computer Science</option>
+        <option value="core">Core</option>
+      </select>
+      <select name="course-semester" id="course-semester">
+        <option value="none"></option>
+        <option value="fall">Fall</option>
+        <option value="spring">Spring</option>
+        <option value="jterm">J-term</option>
+        <option value="summer">Summer</option>
+      </select>
+      <input type="text" id="course-name" placeholder="Course Name">
+      <button type="submit">Search</button>
+    </form>
+    <ul>
+      <div class="course" draggable="true" ondragstart="dragstart_handler(event);">
+        <li>
+          <span class="course-id">CS-106</span>
+          <span class="course-title">CSO</span>
+        </li>
       </div>
+    </ul>
+  </div>
+  <div class="planner">
+    <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+      Fall
+    </div>
+    <div class="jterm-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+      J-Term
+    </div>
+    <div class="spring-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+      Spring
+    </div>
+    <div class="summer-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+      Summer
+    </div>
+  </div>
+</main>
 
-
-
-    <script src = "js/script.js"></script>
-
-	</body>
+<footer>
+  
+</footer>
+<script src="js/script.js"></script>
+</body>
 </html>

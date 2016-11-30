@@ -1,7 +1,27 @@
-#user_input{
-  padding-left: 7em;
+.options {
+  float: left;
 }
 
-#top-bar{
-  margin:  1em;
+.status {
+  float: right;
+}
+
+main {
+  clear: both;
+}
+
+.status div, h3, progress{
+  display: inline-block;
+}
+
+.course-list {
+  float: left;
+}
+
+.planner {
+  float:right;
+}
+
+footer {
+  clear: both;
 }
