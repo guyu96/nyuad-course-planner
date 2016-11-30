@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body >
 
 
 <main>
@@ -31,8 +31,14 @@
         <input type="text" id="course-name" placeholder="Course Name">
         <button type="submit">Search</button>
       </form>
-      <ul>
-        <div class="course" draggable="true" ondragstart="dragstart_handler(event);">
+      <ul ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        <div class="course" id='1' draggable="true" ondragstart="dragstart_handler(event);" ondragleave="dragleave_handler(event);">
+          <li>
+            <span class="course-id">CS-106</span>
+            <span class="course-title">CSO</span>
+          </li>
+        </div>
+        <div class="course" id='2' draggable="true" ondragstart="dragstart_handler(event);" >
           <li>
             <span class="course-id">CS-106</span>
             <span class="course-title">CSO</span>
@@ -114,5 +120,7 @@
 
 </footer>
 <script src="js/script.js"></script>
+<script src="js/dragondrop.js"></script>
+
 </body>
 </html>

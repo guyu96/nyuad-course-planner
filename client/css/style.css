@@ -32,3 +32,17 @@ footer {
 button{
    display: inline-block;
 }
+
+#source {
+    color: blue;
+    border: 1px solid black;
+}
+
+#target {
+    border: 1px solid black;
+}
+
+ul{
+  border: 1px solid black;
+  min-height: 5em;
+}
