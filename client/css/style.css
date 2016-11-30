@@ -50,7 +50,7 @@ button{
    border: none;
 }
 
-ul.course-box{
+#course-box{
   margin-right: 1em;
   width: 90%;
   height: 20em;

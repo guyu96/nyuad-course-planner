@@ -33,19 +33,7 @@
         <input type="text" id="course-name" placeholder="Course Name">
         <button type="submit" class="pure-button pure-button-primary">Search</button>
       </form>
-      <ul class="course-box" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-        <div class="course" id='c1' draggable="true" ondragstart="dragstart_handler(event);" >
-          <li>
-            <span class="course-id">CS-106</span>
-            <span class="course-title">CSO</span>
-          </li>
-        </div>
-        <div class="course" id='c2' draggable="true" ondragstart="dragstart_handler(event);" >
-          <li>
-            <span class="course-id">CS-106</span>
-            <span class="course-title">CSO</span>
-          </li>
-        </div>
+      <ul id="course-box" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
       </ul>
     </div>
 
