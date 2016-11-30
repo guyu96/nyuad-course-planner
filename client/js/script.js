@@ -7,7 +7,7 @@ var int2semester = {
   3: 'Summer'
 }
 
-function get_course_element(course, i) {
+function get_course_element(course, id_num) {
   var id = course.ID;
   var title = course.title;
   var semester = [];
@@ -19,7 +19,7 @@ function get_course_element(course, i) {
 
   var course_li = document.createElement('li');
   course_li.setAttribute('class', 'course');
-  course_li.setAttribute('id', 'course' + i);
+  course_li.setAttribute('id', 'course' + id_num);
   course_li.setAttribute('draggable', 'true');
   course_li.setAttribute('ondragstart', 'dragstart_handler(event);');
 
@@ -79,35 +79,54 @@ function get_criteria () {
   return {'title': keyword, 'semester': parseInt(semester), 'type': category[type]}
 }
 
-function filter(list, criteria){
-  var courses = new Array();
+function filter_course_list(event) {
+  event.preventDefault();
+  console.log('haha');
+  var xhr = new XMLHttpRequest();
+  var criteria = get_criteria();
 
-  list.forEach(function(c) {
-    var req = true;
+  xhr.onload = function() {
+    var courses = [];
 
-    if (criteria.title !== null && c.title.indexOf(criteria.title) === -1) {
-      req = false;
-    }
+    var all_courses = JSON.parse(this.responseText);
+    all_courses.forEach(function(course) {
+      // check for title
+      var title = (course.title.toLowerCase().indexOf(criteria.title.toLowerCase()) !== -1);
+      // check for semester
+      var semester = (criteria.semester === -1 || course.semester[criteria.semester] === 1);
+      // check for requirement
+      var req = false;
 
-    if (criteria.semester !== null && c.semester[criteria.semester-1] !== 1){
-      req = false;
-    }
+      if (criteria.type === undefined) {
+        req = true;
+      } else {
+        course.requirements.forEach(function(r) {
+          if (criteria.type.includes(r)) {
+            req = true;
+          }
+        });
+      }
 
-    var check = 0;
-    c.requirements.forEach(function(r) {
-      if (criteria.type.indexOf(r) > -1){
-        check = 1;
+      if (title && semester && req) {
+        courses.push(course);
       }
     });
 
-    if (req && check !== 0){
-      courses.push(c);
+    var course_box = document.getElementById('course-box');
+    while (course_box.firstChild) {
+      course_box.removeChild(course_box.firstChild);
     }
-  });
+    for (var i = 0; i < courses.length; i++) {
+      course_box.appendChild(get_course_element(courses[i], i));
+    }
+    console.log('haha')
+  }
 
-  return courses;
+  xhr.open("GET", '/course-ad');
+  xhr.send();
+
+  return false;
 }
-
 
 function previous_year(){
   var i;
