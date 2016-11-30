@@ -31,6 +31,7 @@ xhr.onload = function () {
       }
     }
   });
+  console.log(result);
   console.log(JSON.stringify(result));
 }
 

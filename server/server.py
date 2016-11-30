@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify, send_file, Response
 
+import os
+
 app = Flask(__name__, static_url_path='', static_folder='public')
 
 @app.route('/ad-classes', methods=['GET'])
