@@ -12,25 +12,9 @@ function dragover_handler(ev) {
  ev.preventDefault();
 }
 
-function dragleave_handler(ev) {
- console.log("dragLeave");
- // Change the source element's border back to white
- ev.currentTarget.style.background = "white";
-}
-
 function drop_handler(ev) {
  console.log("Drop");
  ev.preventDefault();
  var data = ev.dataTransfer.getData("text");
  ev.target.appendChild(document.getElementById(data));
 }
-
-
-// function init() {
-//  // Set handlers for the source's enter/leave/end/exit events
-//  var el=document.getElementById("source");
-//  el.ondragenter = dragenter_handler;
-//  el.ondragleave = dragleave_handler;
-//  el.ondragend = dragend_handler;
-//  el.ondragexit = dragexit_handler;
-// }
