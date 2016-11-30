@@ -1,27 +1,34 @@
-.options {
-  float: left;
-}
-
-.status {
-  float: right;
-}
-
 main {
   clear: both;
-}
-
-.status div, h3, progress{
-  display: inline-block;
 }
 
 .course-list {
   float: left;
 }
 
+.disabled{
+  display: none;
+}
+
 .planner {
-  float:right;
+  width: 100%;
+  border: solid;
+  text-align: center;
+}
+
+.planner div{
+  border: solid;
+  border-width: 1px;
 }
 
 footer {
   clear: both;
+}
+
+.year_switch{
+   display: inline-block;
+}
+
+button{
+   display: inline-block;
 }
