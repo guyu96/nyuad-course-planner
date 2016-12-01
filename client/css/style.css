@@ -15,7 +15,7 @@ main {
   float: left;
 }
 
-.disabled{
+.disabled {
   display: none;
 }
 
@@ -29,13 +29,14 @@ main {
   border-width: 1px;
 }
 
-button{
+button {
    display: inline-block;
    background: transparent;
    border: none;
 }
 
 #course-box{
+  padding: 0;
   margin-right: 10px;
   height: 400px;
   border: 1px solid black;
