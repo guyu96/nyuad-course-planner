@@ -56,11 +56,11 @@ function drop_handler(ev) {
   // dropped to neither
   } else {
     console.log('case 3');
-    while (node !== null && node.className !== 'course') {
+    while (node !== null && node.className !== 'course' && node.className !=='course small-course') {
       console.log('node is not outercontainer', node.nodeName);
       node = node.parentElement;
     }
-    if (node === undefined) return;
+    if (!node) return;
     new_parent = node.parentNode;
     if (new_parent.id == 'course-box') {
       sem_match = true;
