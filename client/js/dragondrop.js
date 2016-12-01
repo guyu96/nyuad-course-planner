@@ -80,3 +80,4 @@ function drop_handler(ev) {
   }
   new_parent.appendChild(course_node);
 }
+

@@ -1,7 +1,8 @@
 body{
   margin: 1em;
   font-family: 'Open Sans', sans-serif;
-  color: #2E3436;
+  color: #FFFFFF;
+  background: #565656;
 }
 
 .small-course{
@@ -16,6 +17,8 @@ body{
 h1{
   text-align: center;
   margin: 40px 0 60px 0;
+  font-family: 'Poiret One', cursive;
+  letter-spacing: 0.2em;
 }
 
 main {
@@ -36,7 +39,7 @@ main {
 }
 
 .planner {
-  border: 1px solid black;
+  border: 1px solid;
   text-align: center;
 }
 
@@ -69,8 +72,9 @@ button {
 }
 
 .course {
-  background: #e6e6e6;
-  border: 1px solid black;
+  color: #565656;
+  background: #ffffff;
+  border: 1px solid;
   padding: 2px;
   margin: 5px;
   list-style: none;
@@ -80,6 +84,7 @@ button {
   display: inline-block;
   text-align: center;
   width: 80px;
+  font-weight: bold;
 }
 
 .planner h3{
@@ -92,6 +97,12 @@ button {
   min-height: 135px;
 }
 
-.button-secondary {
-  background: rgb(66, 184, 221);
+#savetoPDF {
+  margin-top: 30px;
+  float: right;
+}
+
+input, select {
+  font-family: inherit;
+  color: #565656;
 }
