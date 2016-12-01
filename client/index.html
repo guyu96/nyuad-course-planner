@@ -7,8 +7,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/341779c185.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body >
@@ -17,98 +16,98 @@
 </header>
 
 <main>
-  <div class="pure-g">
-    <div class="course-list pure-u-5-12">
+  <div class="course-list pure-u-2-5">
+    <form id='filter-form' onchange="filter_course_list(event)" onsubmit="filter_course_list(event);" class="pure-form">
+      <select name="course-type" id="course-type">
+        <option value="none"></option>
+      </select>
+      <select name="course-semester" id="course-semester">
+        <option value="-1"></option>
+        <option value="0">Fall</option>
+        <option value="1">J-term</option>
+        <option value="2">Spring</option>
+        <option value="3">Summer</option>
+      </select>
+      <input type="text" onkeyup="filter_course_list(event)" id="course-name" placeholder="Course Name">
+    </form>
+    <ul id="course-box" class="course-box" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+    </ul>
+  </div>
 
-      <form onsubmit="filter_course_list(event);" class="pure-form">
-        <select name="course-type" id="course-type">
-          <option value="none"></option>
-        </select>
-        <select name="course-semester" id="course-semester">
-          <option value="-1"></option>
-          <option value="0">Fall</option>
-          <option value="1">Spring</option>
-          <option value="2">J-term</option>
-          <option value="3">Summer</option>
-        </select>
-        <input type="text" id="course-name" placeholder="Course Name">
-        <button type="submit" class="pure-button pure-button-primary">Search</button>
-      </form>
-
-      <ul id="course-box" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-      </ul>
+  <div class="planner-area pure-u-3-5">
+    <div class="year_switch">
+      <button id="previous" type="button" onclick="previous_year()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        <span id="current-year">Freshman</span>
+      <button id="next" type="button" onclick="next_year()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
     </div>
 
-    <div class="pure-u-14-24">
-        <div class="year_switch">
-          <button id="previous" type="button" onclick="previous_year()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-            <span id="current_year"></span>
-          <button id="next" type="button" onclick="next_year()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-        </div>
-
-      <div class="planner" id="0">
-        <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Fall0
-        </div>
-        <div class="jterm-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          J-Term
-        </div>
-        <div class="spring-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Spring
-        </div>
-        <div class="summer-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Summer
-        </div>
+    <div class="planner" id="0">
+      <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Fall0
       </div>
-      <div class="planner disabled" id="1">
-        <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Fall1
-        </div>
-        <div class="jterm-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          J-Term
-        </div>
-        <div class="spring-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Spring
-        </div>
-        <div class="summer-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Summer
-        </div>
+      <div class="jterm-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        J-Term
       </div>
-      <div class="planner disabled" id="2">
-        <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Fall2
-        </div>
-        <div class="jterm-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          J-Term
-        </div>
-        <div class="spring-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Spring
-        </div>
-        <div class="summer-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Summer
-        </div>
+      <div class="spring-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Spring
       </div>
-      <div class="planner disabled" id="3">
-        <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Fall3
-        </div>
-        <div class="jterm-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          J-Term
-        </div>
-        <div class="spring-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Spring
-        </div>
-        <div class="summer-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-          Summer
-        </div>
+      <div class="summer-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Summer
       </div>
     </div>
+
+    <div class="planner disabled" id="1">
+      <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Fall1
+      </div>
+      <div class="jterm-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        J-Term
+      </div>
+      <div class="spring-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Spring
+      </div>
+      <div class="summer-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Summer
+      </div>
+    </div>
+
+    <div class="planner disabled" id="2">
+      <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Fall2
+      </div>
+      <div class="jterm-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        J-Term
+      </div>
+      <div class="spring-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Spring
+      </div>
+      <div class="summer-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Summer
+      </div>
+    </div>
+
+    <div class="planner disabled" id="3">
+      <div class="fall-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Fall3
+      </div>
+      <div class="jterm-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        J-Term
+      </div>
+      <div class="spring-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Spring
+      </div>
+      <div class="summer-planner" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+        Summer
+      </div>
+    </div>
+
   </div>
 </main>
 
 <footer>
 
 </footer>
+
 <script src="js/script.js"></script>
 <script src="js/dragondrop.js"></script>
 

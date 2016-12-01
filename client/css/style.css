@@ -1,7 +1,6 @@
 body{
   margin: 1em;
   font-family: 'Open Sans', sans-serif;
-
 }
 
 h1{
@@ -21,27 +20,13 @@ main {
 }
 
 .planner {
-  width: 100%;
   border: 1px solid black;
   text-align: center;
-  margin-top: 52px;
 }
 
-.planner div{
+.planner div {
   border: solid;
   border-width: 1px;
-}
-
-footer {
-  clear: both;
-}
-
-.year_switch{
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    width: 40%;
-    text-align: center;
 }
 
 button{
@@ -51,20 +36,37 @@ button{
 }
 
 #course-box{
-  margin-right: 1em;
-  width: 90%;
-  height: 20em;
+  margin-right: 10px;
+  height: 400px;
   border: 1px solid black;
   min-height: 1em;
   overflow: scroll;
 }
 
+#filter-form {
+  display: inline-block;
+  text-align: center;
+}
+
 #course-type, #course-name, #course-semester{
-  width: 27%;
+  width: 30%;
 }
 
 .course {
   border: 1px solid black;
   margin: 5px;
   list-style: none;
+}
+
+#current-year {
+  display: inline-block;
+  text-align: center;
+  width: 80px;
+}
+
+.planner {
+}
+
+.planner div {
+  min-height: 120px;
 }

@@ -7,6 +7,8 @@ var int2semester = {
   3: 'Summer'
 }
 
+var years = ["Freshman", "Sophomore", "Junior", "Senior"];
+
 function get_course_element(course, id_num) {
   var id = course.ID;
   var title = course.title;
@@ -29,7 +31,7 @@ function get_course_element(course, id_num) {
   var course_span_id = document.createElement('span');
   var course_span_title = document.createElement('span');
   course_span_id.setAttribute('class', 'course-id');
-  course_span_id.appendChild(document.createTextNode(id));
+  course_span_id.appendChild(document.createTextNode(id + ' '));
   course_span_title.setAttribute('class', 'course-title');
   course_span_title.appendChild(document.createTextNode(title));
 
@@ -129,47 +131,36 @@ function filter_course_list(event) {
 
 function previous_year(){
   var i;
-  for( i=0; i<4; i++){
+  for(i=0; i<4; i++){
     if (!(($("#"+i).hasClass('disabled')))){
       break;
     }
   }
-  console.log(i);
   if(i===0){
     return;
-  }
-  else {
-    for(var j=0; j<4; j++){
-      if(j===i-1){
-        $("#"+j).removeClass('disabled');
-      }
-      if(j===i){
-        $("#"+j).addClass('disabled');
-      }
-    }
+  } else {
+    console.log(i-1);
+    document.getElementById('current-year').textContent = years[i-1];
+    $("#"+(i-1)).removeClass('disabled');
+    $("#"+i).addClass('disabled');
   }
 }
 
 function next_year(){
   var i;
-  for( i=0; i<4; i++){
+  for(i=0; i<4; i++){
     if (!(($("#"+i).hasClass('disabled')))){
-        break;
+      break;
     }
   }
-  console.log(i);
   if(i===3){
     return;
   }
   else {
-    for(var j=0; j<4; j++){
-      if(j===i+1){
-        $("#"+j).removeClass('disabled');
-      }
-      if(j===i){
-        $("#"+j).addClass('disabled');
-      }
-    }
+    console.log(i+1, years[i+1]);
+    document.getElementById('current-year').textContent = years[i+1];
+    $("#"+(i+1)).removeClass('disabled');
+    $("#"+i).addClass('disabled');
   }
 }
 
