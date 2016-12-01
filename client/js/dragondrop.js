@@ -74,9 +74,9 @@ function drop_handler(ev) {
 
   var course_node = document.getElementById(original_id);
   if (new_parent.id === 'course-box') {
-    course_node.setAttribute('class', 'course small-course');
-  } else {
     course_node.setAttribute('class', 'course');
+  } else {
+    course_node.setAttribute('class', 'course small-course');
   }
-  new_parent.appendChild();
+  new_parent.appendChild(course_node);
 }

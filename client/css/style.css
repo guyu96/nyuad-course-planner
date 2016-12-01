@@ -3,6 +3,14 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
+.small-course{
+  display: inline-block;
+  width: 15%;
+  height: 110px;
+  overflow: hidden;
+  font-size: 0.6em;
+}
+
 h1{
   text-align: center;
 }
