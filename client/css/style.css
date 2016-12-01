@@ -62,3 +62,9 @@ button{
 #course-type, #course-name, #course-semester{
   width: 27%;
 }
+
+.course {
+  border: 1px solid black;
+  margin: 5px;
+  list-style: none;
+}

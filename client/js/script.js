@@ -81,7 +81,6 @@ function get_criteria () {
 
 function filter_course_list(event) {
   event.preventDefault();
-  console.log('haha');
   var xhr = new XMLHttpRequest();
   var criteria = get_criteria();
 
