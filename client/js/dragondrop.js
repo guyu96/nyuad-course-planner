@@ -72,7 +72,11 @@ function drop_handler(ev) {
   if (!sem_match) return;
   if (original_src === new_parent.className) return;
 
-  console.log(new_parent.className);
-  new_parent.appendChild(document.getElementById(original_id));
-  
+  var course_node = document.getElementById(original_id);
+  if (new_parent.id === 'course-box') {
+    course_node.setAttribute('class', 'course small-course');
+  } else {
+    course_node.setAttribute('class', 'course');
+  }
+  new_parent.appendChild();
 }
