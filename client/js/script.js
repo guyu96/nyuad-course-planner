@@ -24,6 +24,7 @@ function get_course_element(course, id_num) {
   course_li.setAttribute('id', 'course' + id_num);
   course_li.setAttribute('draggable', 'true');
   course_li.setAttribute('ondragstart', 'dragstart_handler(event);');
+  // course_li.setAttribute('offering', )
 
   var course_h4 = document.createElement('h4');
   course_h4.setAttribute('class', 'course-heading');
