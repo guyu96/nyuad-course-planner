@@ -5,6 +5,7 @@ function savetoPDF(){
   var counter=0;
   for (var i=0; i<4; i++){
     doc.setFontSize(14);
+    counter++;
     doc.text(years[i], 10, 10+(counter*5));
     counter++;
     var planner = document.getElementById(i);
@@ -20,7 +21,6 @@ function savetoPDF(){
         console.log(innertext);
         doc.setFontSize(10);
         doc.text(innertext, 10, 10+(counter*5));
-        console.log(counter);
         counter++;
         if (counter > 56){
           doc.addPage('a4');
