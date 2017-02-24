@@ -1,1 +1,1 @@
-# nyuad-course-planner
+# NYUAD Course Planner
