@@ -1,0 +1,145 @@
+html, body{
+  margin: 1em;
+  font-family: 'Open Sans', sans-serif;
+  color: #FFFFFF;
+  background: #565656;
+  height: 100%;
+}
+
+h1{
+  text-align: center;
+  margin: 40px 0 60px 0;
+  font-family: 'Poiret One', cursive;
+  letter-spacing: 0.2em;
+}
+
+main {
+  clear: both;
+}
+
+#year-switch {
+  width: 200px;
+  margin: auto;
+}
+
+.course-list {
+  float: left;
+}
+
+.disabled {
+  display: none;
+}
+
+.planner {
+  border: 1px solid;
+  text-align: center;
+}
+
+.planner div {
+  border: solid;
+  border-width: 1px;
+}
+
+button {
+   display: inline-block;
+   background: transparent;
+   border: none;
+   outline: none;
+}
+
+#course-box{
+  padding: 0;
+  margin: 5px;
+  height: 650px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+#filter-form {
+  display: inline-block;
+  text-align: center;
+}
+
+#course-type{
+  margin-left: -15px;
+  margin-right: 5px;
+  width: 30%;
+}
+
+#course-semester {
+  width: 25%;
+  margin-right: 5px;
+}
+
+#course-name {
+  width: 35%;
+}
+
+.course {
+  color: #565656;
+  background: #ffffff;
+  border: 1px solid;
+  padding: 10px;
+  margin: 5px;
+  list-style: none;
+  cursor: grab;
+}
+
+.course:hover {
+    border: 1px solid gray;
+}
+
+.small-course{
+  color: #565656;
+  background: #ffffff;
+  /*border: 1px solid;*/
+  display: inline-block;
+  position: relative;
+  width: 17%;
+  height: 100px;
+  overflow:hidden;
+  font-size: 0.8em;
+  margin-right: 10px;
+  padding: 10px 3px;
+  border-radius: 10%;
+  font-weight: bold;
+  cursor: default;
+}
+
+.remove-course {
+    position: absolute;
+    top: -10px;
+    left: 70%;
+    color: red;
+}
+
+#current-year {
+  display: inline-block;
+  text-align: center;
+  width: 120px;
+  font-size: 1.2em;
+  margin: 0 10px 25px 10px;
+}
+
+.semester-planner{
+  padding: 0;
+  /*margin: 2px;*/
+  font-size: 0.8em;
+}
+
+.planner div {
+  min-height: 160px;
+}
+
+#savetoPDF {
+  position: absolute;
+  top: 160px;
+  right: 20px;
+  width: 120px;
+  font-size: 0.8em;
+}
+
+input, select {
+  font-family: inherit;
+  color: #565656;
+}

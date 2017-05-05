@@ -52,6 +52,7 @@ function populate_course_list() {
   var xhr = new XMLHttpRequest();
   xhr.onload = function() {
     var courses = JSON.parse(this.responseText);
+    // console.log(courses);
     var course_box = document.getElementById('course-box');
     for (var i = 0; i < courses.length; i++) {
       course_box.appendChild(get_course_element(courses[i], i));
@@ -121,7 +122,6 @@ function filter_course_list(event) {
     for (var i = 0; i < courses.length; i++) {
       course_box.appendChild(get_course_element(courses[i], i));
     }
-    console.log('haha')
   }
 
   xhr.open("GET", '/course-ad');
