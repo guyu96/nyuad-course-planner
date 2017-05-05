@@ -1,4 +1,4 @@
-from urllib import request
+# from urllib import request
 import xml.etree.ElementTree as ET
 
 
