@@ -4,4 +4,5 @@ __pycache__/
 scraper/config.json
 scraper/*.log
 react-app/node_modules
-node_modules/.DS_Store
+react-app/.DS_Store
+demo/
