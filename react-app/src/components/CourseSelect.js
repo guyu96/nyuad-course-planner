@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CourseElement from './CourseElement';
+import Adder from '../containers/Adder';
 
 export default class CourseSelect extends Component {
 
@@ -129,8 +129,9 @@ export default class CourseSelect extends Component {
                                 semesters.push(this.state.int2semester[i]);
                         }
 
-                        return <CourseElement className={`course${element.ID}`} id={element.ID}
-                                course={element} semesters={semesters} dropped={false} key={element.ID} ref={element.ID}/>
+                        return  <Adder key={element.ID} id={element.ID} course={element}
+                                        semesters={semesters} dropped={false}>
+                                </Adder>
                     })
                 }
             </ul>

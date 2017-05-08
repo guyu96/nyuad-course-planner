@@ -24,7 +24,7 @@ export default class PlannerElement extends Component {
             <div className={`planner ${this.props.display}`} id={this.props.id}>
             {
                 semesters.map((sem) => {
-                    return <SemesterPlanner semester={sem} key={sem}
+                    return <SemesterPlanner semester={sem} key={sem} 
                             selectedCourses={this.state.selectedCourses[sem]} />
                 })
             }

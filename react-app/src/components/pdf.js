@@ -23,25 +23,27 @@ const PDF = {
 
           for (var k=0; k<semester_children.length; k++){
                 var node = semester_children[k];
-
-                if (node.childNodes.length > 1) {
+                console.log(node.childNodes);
+                // if it's course name, print with a smaller font & add additional constraints
+                if (node.childNodes[0] && node.childNodes[0].nodeName === "LI") {
                     doc.setFontSize(10);
                     let courseList = node.childNodes;
-
-                    courseList.forEach(function(li) {
-                        let textContent = li.childNodes[0].textContent + li.childNodes[1].textContent;
+                    console.log(courseList);
+                    for (let i=0; i < courseList.length; i++) {
+                        let textContent = courseList[i].childNodes[1].textContent + courseList[i].childNodes[2].textContent;
                         doc.text(textContent, 10, 10+(counter*10));
-                        console.log(textContent);
+                        console.log(courseList[i].childNodes[2].textContent);
                         counter ++;
-                    })
+                    }
 
                 }
+                // print semester title with a larger font
                 else {
                     doc.setFontSize(12);
                     doc.text(node.textContent, 10, 10+(counter*10));
                 }
                 counter++;
-                if (counter > 36){
+                if (counter > 25){
                   doc.addPage('a4');
                   counter = 0;
                 }

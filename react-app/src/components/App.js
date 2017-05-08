@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../css/App.css';
 
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
@@ -10,12 +10,12 @@ import Planner from './Planner';
 class App extends Component {
 
     render() {
-    return (
-        <div>
-            <CourseSelect />
-            <Planner />
-        </div>
-    )
+        return (
+            <div>
+                <CourseSelect />
+                <Planner />
+            </div>
+        )
     }
 }
 
