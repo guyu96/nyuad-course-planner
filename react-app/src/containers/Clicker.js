@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { reAddCourse } from '../actions';
 import RemoveBtn from '../components/RemoveBtn';

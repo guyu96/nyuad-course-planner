@@ -1,5 +1,5 @@
 // Default export is a4 paper, portrait, using milimeters for units
-var pdfConverter = require('jspdf');
+import pdfConverter from 'jspdf';
 
 const PDF = {
     savetoPDF(){
@@ -23,12 +23,12 @@ const PDF = {
 
           for (var k=0; k<semester_children.length; k++){
                 var node = semester_children[k];
-                console.log(node.childNodes);
+                // console.log(node.childNodes);
                 // if it's course name, print with a smaller font & add additional constraints
                 if (node.childNodes[0] && node.childNodes[0].nodeName === "LI") {
                     doc.setFontSize(10);
                     let courseList = node.childNodes;
-                    console.log(courseList);
+                    // console.log(courseList);
                     for (let i=0; i < courseList.length; i++) {
                         let textContent = courseList[i].childNodes[1].textContent + courseList[i].childNodes[2].textContent;
                         doc.text(textContent, 10, 10+(counter*10));

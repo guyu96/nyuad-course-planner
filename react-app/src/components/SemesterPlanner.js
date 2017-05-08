@@ -16,6 +16,14 @@ function matchingSemester(planner_semester, course_semesters, selectedCourses) {
             return false;
         }
     }
+    // if PE, can add only in Spring / Fall
+    if (course_semesters.length === 0) {
+        if (planner_semester === "Spring" || planner_semester === "Fall") {
+            return true;
+        }
+        return false;
+    }
+    // console.log(course_semesters);
 
     // check if semesters match
     return course_semesters.indexOf(planner_semester) !== -1;
@@ -49,6 +57,8 @@ function collect(connect, monitor) {
 
 class SemesterPlanner extends Component {
 
+    // add diffrent bg color for different drop situations:
+    // yellow - can drop, red - hover & cannot drop, green - hover & can drop
     renderOverlay(isOver, canDrop) {
         let color;
         if (isOver && !canDrop) {

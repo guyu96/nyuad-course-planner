@@ -50,7 +50,7 @@ button {
 #course-box{
   padding: 0;
   margin: 5px;
-  height: 650px;
+  height: 770px;
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -128,7 +128,7 @@ button {
 }
 
 .planner div {
-  min-height: 160px;
+  min-height: 190px;
 }
 
 #savetoPDF {
